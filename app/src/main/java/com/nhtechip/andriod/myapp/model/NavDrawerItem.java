@@ -59,7 +59,4 @@ public class NavDrawerItem
 			this.isCounterVisible = isCounterVisible;
 		}
 				
-		
-				
-				
 }

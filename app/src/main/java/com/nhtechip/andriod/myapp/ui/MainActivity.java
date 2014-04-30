@@ -20,6 +20,7 @@ import com.nhtechip.andriod.myapp.events.NavItemSelectedEvent;
 import com.nhtechip.andriod.myapp.util.Ln;
 import com.nhtechip.andriod.myapp.util.SafeAsyncTask;
 import com.nhtechip.andriod.myapp.util.UIUtils;
+import com.nhtechip.andriod.myapp.fragment.MainFragment;
 import com.squareup.otto.Subscribe;
 
 import javax.inject.Inject;
@@ -101,7 +102,7 @@ public class MainActivity extends BootstrapFragmentActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-
+        //userHasAuthenticated = false;
         initScreenApp();
         //checkAuth();
 
@@ -134,7 +135,7 @@ public class MainActivity extends BootstrapFragmentActivity {
         Ln.d("Foo");
         final FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, new CarouselFragment())
+                .replace(R.id.container, new MainFragment())
                 .commit();
 
     }

@@ -124,7 +124,6 @@ public class NavigationDrawerFragment extends Fragment {
                 .obtainTypedArray(R.array.nav_drawer_icons);
 
         navDrawerItems = new ArrayList<NavDrawerItem>();
-
         // adding nav drawer items to array
         // Home
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
@@ -143,7 +142,8 @@ public class NavigationDrawerFragment extends Fragment {
         adapter = new NavDrawerListAdapter(getActivity().getApplicationContext(),
                 navDrawerItems);
         drawerListView.setAdapter(adapter);
-        /*
+/*
+
         drawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_1,
@@ -152,7 +152,8 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_home),
                         getString(R.string.title_timer)
                 }));
-        */
+*/
+
         drawerListView.setItemChecked(currentSelectedPosition, true);
         return drawerListView;
     }
@@ -251,6 +252,11 @@ public class NavigationDrawerFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(STATE_SELECTED_POSITION, currentSelectedPosition);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
     }
 
     @Override
