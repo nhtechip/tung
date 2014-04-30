@@ -44,4 +44,12 @@
     <color name="dark_grey">#1f1f1f</color>
     <color name="navigation_drawer_item_separator">#c2c2c2</color>
 
+
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#33B5E5</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+
 </resources>

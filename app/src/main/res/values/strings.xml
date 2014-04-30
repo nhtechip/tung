@@ -44,5 +44,27 @@
     <string name="navigation_drawer_close">Drawer Close</string>
     <string name="title_home">Home</string>
 
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Home</item>
+        <item >Browse</item>
+        <item >Photos</item>
+        <item >Groups</item>
+        <item >Pages</item>
+        <item >NewsFeed</item>
+    </string-array>
 
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/ic_action_search</item>
+        <item>@drawable/ic_action_picture</item>
+        <item>@drawable/ic_action_group</item>
+        <item>@drawable/ic_action_pages</item>
+        <item>@drawable/ic_action_newsfeed</item>
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
 </resources>

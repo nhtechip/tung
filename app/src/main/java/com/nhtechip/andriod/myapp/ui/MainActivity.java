@@ -102,8 +102,8 @@ public class MainActivity extends BootstrapFragmentActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-
-        checkAuth();
+        initScreenApp();
+        //checkAuth();
 
     }
 
@@ -130,6 +130,14 @@ public class MainActivity extends BootstrapFragmentActivity {
         }
     }
 
+    private void initScreenApp() {
+        Ln.d("Foo");
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, new CarouselFragment())
+                .commit();
+
+    }
 
     private void initScreen() {
         if (userHasAuthenticated) {

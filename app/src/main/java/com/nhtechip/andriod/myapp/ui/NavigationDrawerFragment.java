@@ -3,6 +3,7 @@ package com.nhtechip.andriod.myapp.ui;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,11 @@ import com.nhtechip.andriod.myapp.R;
 import com.nhtechip.andriod.myapp.events.NavItemSelectedEvent;
 import com.nhtechip.andriod.myapp.util.UIUtils;
 import com.squareup.otto.Bus;
+
+import com.nhtechip.andriod.myapp.adapter.NavDrawerListAdapter;
+import com.nhtechip.andriod.myapp.model.NavDrawerItem;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -57,6 +63,13 @@ public class NavigationDrawerFragment extends Fragment {
     private int currentSelectedPosition = 0;
     private boolean fromSavedInstanceState;
     private boolean userLearnedDrawer;
+
+    private ArrayList<NavDrawerItem> navDrawerItems;
+    private NavDrawerListAdapter adapter;
+
+    // slide menu items
+    private String[] navMenuTitles;
+    private TypedArray navMenuIcons;
 
     @Inject protected SharedPreferences prefs;
     @Inject protected Bus bus;
@@ -103,6 +116,34 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+
+        navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
+
+        // nav drawer icons from resources
+        navMenuIcons = getResources()
+                .obtainTypedArray(R.array.nav_drawer_icons);
+
+        navDrawerItems = new ArrayList<NavDrawerItem>();
+
+        // adding nav drawer items to array
+        // Home
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
+        // Find People
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+        // Photos
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+        // Communities, Will add a counter here
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, "15"));
+        // Pages
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1),true,"12+"));
+        // What's hot, We  will add a counter here
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1), true, "20+"));
+        navMenuIcons.recycle();
+        // setting the nav drawer list adapter
+        adapter = new NavDrawerListAdapter(getActivity().getApplicationContext(),
+                navDrawerItems);
+        drawerListView.setAdapter(adapter);
+        /*
         drawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_1,
@@ -111,6 +152,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_home),
                         getString(R.string.title_timer)
                 }));
+        */
         drawerListView.setItemChecked(currentSelectedPosition, true);
         return drawerListView;
     }
