@@ -318,5 +318,41 @@
         <item name="android:layout_marginTop">@dimen/card_main_simple_title_margin_top</item>
     </style>
 
+    <!--Staggered-->
+    <!--Style for Content View-->
+    <style name="card.content_outer_layout.staggered">
+        <item name="android:minHeight">20dp</item>
+    </style>
 
+
+    <!--Style for Crouton View-->
+    <style name="card.content_outer_crouton_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:layout_marginTop">@dimen/card_content_outer_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_content_outer_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_content_outer_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_content_outer_view_margin_right</item>
+    </style>
+
+    <style name="card_thumbnail_crouton_image">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="carddemo_extra_base_main_inner_title">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="carddemo_extra_base_main_inner_secondarytitle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
 </resources>

@@ -16,6 +16,11 @@ import com.nhtechip.andriod.myapp.ui.UserListFragment;
 import com.nhtechip.andriod.myapp.fragment.ListNewFragment;
 import com.nhtechip.andriod.myapp.fragment.ListCardFragment;
 import com.nhtechip.andriod.myapp.fragment.ListColorFragment;
+import com.nhtechip.andriod.myapp.fragment.ChangeValueCardFragment;
+import com.nhtechip.andriod.myapp.fragment.GridGplayCABFragment;
+import com.nhtechip.andriod.myapp.fragment.StaggeredGridFragment;
+import com.nhtechip.andriod.myapp.fragment.BaseStaggeredGridFragment;
+import com.nhtechip.andriod.myapp.fragment.CroutonFragment;
 /**
  * Pager adapter
  */
@@ -36,7 +41,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 8;
     }
 
     @Override
@@ -51,6 +56,21 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
                 break;
             case 2:
                 result = new ListColorFragment();
+                break;
+            case 3:
+                result = new ChangeValueCardFragment();
+                break;
+            case 4:
+                result = new GridGplayCABFragment();
+                break;
+            case 5:
+                result = new BaseStaggeredGridFragment();
+                break;
+            case 6:
+                result = new CroutonFragment();
+                break;
+            case 7:
+                result = new CroutonFragment();
                 break;
             default:
                 result = null;
@@ -71,6 +91,16 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
                 return "1";
             case 2:
                 return  "1";
+            case 3:
+                return  "Thay doi";
+            case 4:
+                return  "Grid";
+            case 5:
+                return  "Picaso";
+            case 6:
+                return  "Crouton";
+            case 7:
+                return  "Picaso2";
             default:
                 return null;
         }
