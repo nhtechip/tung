@@ -14,6 +14,8 @@ import com.nhtechip.andriod.myapp.ui.NewsListFragment;
 import com.nhtechip.andriod.myapp.ui.UserListFragment;
 
 import com.nhtechip.andriod.myapp.fragment.ListNewFragment;
+import com.nhtechip.andriod.myapp.fragment.ListCardFragment;
+import com.nhtechip.andriod.myapp.fragment.ListColorFragment;
 /**
  * Pager adapter
  */
@@ -42,13 +44,13 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
         final Fragment result;
         switch (position) {
             case 0:
-                result = new ListNewFragment();
+                result = new ListCardFragment();
                 break;
             case 1:
                 result = new ListNewFragment();
                 break;
             case 2:
-                result = new ListNewFragment();
+                result = new ListColorFragment();
                 break;
             default:
                 result = null;
