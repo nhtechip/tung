@@ -27,6 +27,10 @@ import it.gmariotti.cardslib.library.extra.staggeredgrid.view.CardGridStaggeredV
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardThumbnail;
 
+
+import com.etsy.android.grid.StaggeredGridView;
+import com.nhtechip.andriod.myapp.adapter.SampleAdapter;
+import com.nhtechip.andriod.myapp.model.SampleData;
 /**
  * This example uses a staggered card with different different photos and text.
  *
@@ -38,6 +42,12 @@ import it.gmariotti.cardslib.library.internal.CardThumbnail;
  * @author Gabriele Mariotti (gabri.mariotti@gmail.com)
  */
 public class StaggeredGridFragment extends Fragment {
+
+    private StaggeredGridView mGridView;
+    private boolean mHasRequestedMore;
+    private SampleAdapter mAdapter;
+
+    private ArrayList<String> mData;
 
     ServerDatabase mServerDatabase;
     CardGridStaggeredArrayAdapter mCardArrayAdapter;
@@ -54,7 +64,7 @@ public class StaggeredGridFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.demo_extras_fragment_staggeredgrid, container, false);
+        return inflater.inflate(R.layout.activity_sgv, container, false);//demo_extras_fragment_staggeredgrid
     }
 
     @Override
@@ -67,6 +77,35 @@ public class StaggeredGridFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        mGridView = (StaggeredGridView) getView().findViewById(R.id.grid_view);
+
+        if (savedInstanceState == null) {
+            final LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+
+            View header = layoutInflater.inflate(R.layout.list_item_header_footer, null);
+            View footer = layoutInflater.inflate(R.layout.list_item_header_footer, null);
+            TextView txtHeaderTitle = (TextView) header.findViewById(R.id.txt_title);
+            TextView txtFooterTitle = (TextView) footer.findViewById(R.id.txt_title);
+            txtHeaderTitle.setText("THE HEADER!");
+            txtFooterTitle.setText("THE FOOTER!");
+
+            mGridView.addHeaderView(header);
+            mGridView.addFooterView(footer);
+        }
+
+        if (mAdapter == null) {
+            mAdapter = new SampleAdapter(getActivity(), R.id.txt_line1);
+        }
+
+        if (mData == null) {
+            mData = SampleData.generateSampleData();
+        }
+
+        for (String data : mData) {
+            mAdapter.add(data);
+        }
+
+        mGridView.setAdapter(mAdapter);
       /*  //Set the arrayAdapter
         ArrayList<Card> cards = new ArrayList<Card>();
         mCardArrayAdapter = new CardGridStaggeredArrayAdapter(getActivity(), cards);

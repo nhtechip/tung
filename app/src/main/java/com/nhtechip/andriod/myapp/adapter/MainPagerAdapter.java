@@ -70,7 +70,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
                 result = new CroutonFragment();
                 break;
             case 7:
-                result = new CroutonFragment();
+                result = new StaggeredGridFragment();
                 break;
             default:
                 result = null;

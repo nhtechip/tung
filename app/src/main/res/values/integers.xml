@@ -21,5 +21,5 @@
 
     <!--Staggered -->
     <integer name="carddemo_extras_basestaggered_nlines">4</integer>
-
+    <integer name="grid_column_count">2</integer>
 </resources>

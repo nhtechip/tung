@@ -3,6 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/TextView014" android:text="Row 2 column 1"
+                android:layout_weight="1" android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip" android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/TextView024" android:text="Row 2 column 2"
+                android:layout_weight="1" android:background="#d3d3d3"
+                android:textColor="#000000"
+                android:padding="20dip" android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/TextView304" android:text="Row 2 column 3"
+                android:layout_weight="1" android:background="#cac9c9"
+                android:textColor="#000000"
+                android:padding="20dip" android:gravity="center"/>
+
+        </TableRow>
+
+    </TableLayout>
+
     <!-- TODO: Update blank fragment layout -->
     <it.gmariotti.cardslib.library.view.CardListView
         android:layout_width="match_parent"

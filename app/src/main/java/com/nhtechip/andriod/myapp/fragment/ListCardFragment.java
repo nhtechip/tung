@@ -34,7 +34,7 @@ public class ListCardFragment  extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         Views.inject(this, getView());
-        ArrayList<Card> cards = new ArrayList<Card>();
+  /*      ArrayList<Card> cards = new ArrayList<Card>();
         //Create a Card
         Card card = new Card(getActivity().getBaseContext());
         //Create a CardHeader
@@ -55,7 +55,7 @@ public class ListCardFragment  extends Fragment {
         CardListView listView = (CardListView) getActivity().findViewById(R.id.myList);
         if (listView!=null){
             listView.setAdapter(mCardArrayAdapter);
-        }
+        }*/
     }
 
 }

@@ -38,7 +38,7 @@ public class MainFragment extends Fragment {
 
         pager.setAdapter(new MainPagerAdapter(getResources(), getChildFragmentManager()));
         indicator.setViewPager(pager);
-        pager.setCurrentItem(1);
+        pager.setCurrentItem(0);
 
     }
 }
