@@ -28,6 +28,7 @@ import com.squareup.otto.Bus;
 
 import com.nhtechip.andriod.myapp.adapter.NavDrawerListAdapter;
 import com.nhtechip.andriod.myapp.model.NavDrawerItem;
+import com.nhtechip.andriod.myapp.adapter.SeparatedListAdapter;
 
 import java.util.ArrayList;
 
@@ -70,6 +71,9 @@ public class NavigationDrawerFragment extends Fragment {
     // slide menu items
     private String[] navMenuTitles;
     private TypedArray navMenuIcons;
+
+    // Adapter for ListView Contents
+    private SeparatedListAdapter listAdapter;
 
     @Inject protected SharedPreferences prefs;
     @Inject protected Bus bus;
@@ -141,7 +145,10 @@ public class NavigationDrawerFragment extends Fragment {
         // setting the nav drawer list adapter
         adapter = new NavDrawerListAdapter(getActivity().getApplicationContext(),
                 navDrawerItems);
-        drawerListView.setAdapter(adapter);
+
+        listAdapter = new SeparatedListAdapter(getActivity().getApplicationContext());
+        listAdapter.addSection("Mon", adapter);
+        drawerListView.setAdapter(listAdapter);
 /*
 
         drawerListView.setAdapter(new ArrayAdapter<String>(
