@@ -1,45 +1,61 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+
+<android.support.v4.view.ViewPager
+    android:id="@+id/pagerimage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="3dp"/>
 
+<com.viewpagerindicator.CirclePageIndicator
+    android:id="@+id/indicatorImage"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_alignParentBottom="true"/>
+<!--
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
-    <TableLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+        <TextView
+            android:id="@+id/TextView014" android:text="Row 2 column 1"
+            android:layout_weight="1" android:background="#dcdcdc"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
 
-            <TextView
-                android:id="@+id/TextView014" android:text="Row 2 column 1"
-                android:layout_weight="1" android:background="#dcdcdc"
-                android:textColor="#000000"
-                android:padding="20dip" android:gravity="center"/>
+        <TextView
+            android:id="@+id/TextView024" android:text="Row 2 column 2"
+            android:layout_weight="1" android:background="#d3d3d3"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
 
-            <TextView
-                android:id="@+id/TextView024" android:text="Row 2 column 2"
-                android:layout_weight="1" android:background="#d3d3d3"
-                android:textColor="#000000"
-                android:padding="20dip" android:gravity="center"/>
+        <TextView
+            android:id="@+id/TextView304" android:text="Row 2 column 3"
+            android:layout_weight="1" android:background="#cac9c9"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
 
-            <TextView
-                android:id="@+id/TextView304" android:text="Row 2 column 3"
-                android:layout_weight="1" android:background="#cac9c9"
-                android:textColor="#000000"
-                android:padding="20dip" android:gravity="center"/>
+    </TableRow>
 
-        </TableRow>
-
-    </TableLayout>
-
-    <!-- TODO: Update blank fragment layout -->
-    <it.gmariotti.cardslib.library.view.CardListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/myList"/>
-
-</FrameLayout>
+</TableLayout>
+-->
+<!-- TODO: Update blank fragment layout -->
+    <!--
+<it.gmariotti.cardslib.library.view.CardListView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/myList"/>
+    -->
+</RelativeLayout>

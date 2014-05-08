@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.nhtechip.andriod.myapp.R;
 import com.nhtechip.andriod.myapp.adapter.MainPagerAdapter;
 import com.viewpagerindicator.TitlePageIndicator;
+import com.astuetz.PagerSlidingTabStrip;
 
 import butterknife.InjectView;
 import butterknife.Views;
@@ -20,7 +21,7 @@ import butterknife.Views;
 public class MainFragment extends Fragment {
 
     @InjectView(R.id.tpi_header)
-    protected TitlePageIndicator indicator;
+    protected PagerSlidingTabStrip indicator;
 
     @InjectView(R.id.vp_pages)
     protected ViewPager pager;

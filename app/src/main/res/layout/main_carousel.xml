@@ -6,18 +6,19 @@
               android:background="@color/pager_background"
               android:layout_height="match_parent">
 
-    <com.viewpagerindicator.TitlePageIndicator
-            android:id="@+id/tpi_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            textColor="@color/text_light"
-            android:background="@drawable/stripe_repeat"
-            />
+
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tpi_header"
+        android:layout_width="match_parent"
+        android:layout_height="62dip"
+        android:layout_below="@+id/image"
+        android:background="@drawable/background_tabs_diagonal"/>
 
     <android.support.v4.view.ViewPager
-            android:id="@+id/vp_pages"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        android:id="@+id/vp_pages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabs" />
+
 
 </LinearLayout>
